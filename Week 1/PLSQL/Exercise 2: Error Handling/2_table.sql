@@ -1,0 +1,9 @@
+CREATE TABLE Accounts (account_id NUMBER PRIMARY KEY, balance NUMBER);
+INSERT INTO Accounts VALUES (1, 1000);
+INSERT INTO Accounts VALUES (2, 500);
+
+CREATE TABLE Employees (employee_id NUMBER PRIMARY KEY, salary NUMBER);
+INSERT INTO Employees VALUES (101, 50000);
+
+CREATE TABLE Customers (customer_id NUMBER PRIMARY KEY, name VARCHAR2(50));
+INSERT INTO Customers VALUES (1, 'Alice');
