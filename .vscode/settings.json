@@ -1,0 +1,5 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.detectJdksAtStart": true,
+    "java.configuration.runtimes": []
+}
