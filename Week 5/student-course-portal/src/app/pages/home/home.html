@@ -1,0 +1,25 @@
+<!-- 1. Interpolation -->
+<h1>{{ portalName }}</h1>
+
+<p>Manage your classes, track your grades, and discover new learning opportunities all in one place.</p>
+<div class="stats-row">
+  <span>Courses Available: 12</span> | 
+  <span>Enrolled: 3</span> | 
+  <span>GPA: 3.8</span>
+</div>
+
+<hr>
+
+
+<div>
+  <button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+  <p>{{ message }}</p>
+</div>
+
+<br>
+
+<div>
+  <label>Search: </label>
+  <input [(ngModel)]="searchTerm">
+  <p>Searching for: {{ searchTerm }}</p>
+</div>

@@ -1,0 +1,35 @@
+<h2>Course Registration</h2>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" style="max-width: 400px;">
+  
+  <div style="margin-bottom: 15px;">
+    <label>Select Course:</label><br>
+    <select formControlName="courseName">
+      <option value="">-- Choose a Course --</option>
+      <option value="Advanced Python">Advanced Python</option>
+      <option value="Machine Learning Basics">Machine Learning Basics</option>
+      <option value="Cloud Data Engineering">Cloud Data Engineering</option>
+    </select>
+    
+    <div *ngIf="registrationForm.get('courseName')?.invalid && registrationForm.get('courseName')?.touched" style="color: red; font-size: 12px;">
+      Please select a course.
+    </div>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <label>Experience Level:</label><br>
+    <input type="radio" formControlName="level" value="beginner"> Beginner
+    <input type="radio" formControlName="level" value="advanced"> Advanced
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <input type="checkbox" formControlName="agreeToTerms">
+    <label> I agree to the terms and conditions</label>
+    <div *ngIf="registrationForm.get('agreeToTerms')?.invalid && registrationForm.get('agreeToTerms')?.touched" style="color: red; font-size: 12px;">
+      You must agree to continue.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+
+</form>

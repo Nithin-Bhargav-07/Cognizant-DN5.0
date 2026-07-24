@@ -1,0 +1,14 @@
+<h2>Available Courses</h2>
+
+
+<p *ngIf="courses.length === 0">No courses available right now.</p>
+
+<ul *ngIf="courses.length > 0">
+  <li *ngFor="let course of courses" style="margin-bottom: 15px;">
+    
+    <strong>{{ course.title | uppercase }}</strong> <br>
+    Price: {{ course.price | currency:'USD' }} <br>
+    Starts: {{ course.enrollDate | date:'longDate' }}
+    
+  </li>
+</ul>
