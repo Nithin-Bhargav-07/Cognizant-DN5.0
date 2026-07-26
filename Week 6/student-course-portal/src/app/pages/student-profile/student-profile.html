@@ -1,0 +1,36 @@
+<h2>Update Student Profile</h2>
+
+<form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)" style="max-width: 400px;">
+  
+  <!-- 2. Name Input -->
+  <div style="margin-bottom: 15px;">
+    <label>Full Name:</label><br>
+    <input 
+      type="text" 
+      name="name" 
+      [(ngModel)]="userProfile.name" 
+      required 
+      #name="ngModel">
+    <div *ngIf="name.invalid && name.touched" style="color: red; font-size: 12px;">
+      Name is required.
+    </div>
+  </div>
+
+  <!-- 3. Email Input -->
+  <div style="margin-bottom: 15px;">
+    <label>University Email:</label><br>
+    <input 
+      type="email" 
+      name="email" 
+      [(ngModel)]="userProfile.email" 
+      required 
+      email 
+      #email="ngModel">
+    <div *ngIf="email.invalid && email.touched" style="color: red; font-size: 12px;">
+      Please enter a valid email address.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="profileForm.invalid">Save Changes</button>
+
+</form>
